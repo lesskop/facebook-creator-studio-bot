@@ -1,0 +1,4 @@
+.idea/
+.venvSelenium/
+geckodriver.log
+geckodriver.exe
