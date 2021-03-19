@@ -37,7 +37,7 @@ tags_like = ['likes', 'like', 'follow', 'likeforlikes', 'love', 'instagood', 'in
 
 tags = list(set(tags_like + tags_cats + tags_follow))
 
-locations = ['Taganrog Old Cemetery', 'New York', 'Los Angeles, California', 'San Francisco, California',
+locations = ['New York', 'Los Angeles, California', 'San Francisco, California',
              'Paris, France', 'Alabama', 'Barcelona, Spain', 'Madrid, Spain', 'Melbourne, Australia',
              'Sydney, Australia', 'Bangkok, Thailand', 'Jakarta, Indonesia', 'Amsterdam, Netherlands',
              'Chicago, Illinois', 'Santiago, Chile', 'San Diego, California', 'Houston, Texas',
