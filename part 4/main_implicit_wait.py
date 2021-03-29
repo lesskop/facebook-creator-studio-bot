@@ -118,37 +118,37 @@ class CreatorStudioBot:
         driver.get(link)
 
         driver.find_element_by_id('media_manager_chrome_bar_instagram_icon').click()
-        sleep(1)
+        driver.implicitly_wait(1)
 
         driver.find_element_by_xpath(
             '/html/body/div/div[1]/div[2]/div/div[2]/div/div/div/div[2]/div'
         ).click()
-        sleep(4)
+        driver.implicitly_wait(4)
 
         # switch active browser window
         driver.switch_to.window(driver.window_handles[1])
 
         # username input
         driver.find_element_by_name('username').send_keys(username)
-        sleep(1)
+        driver.implicitly_wait(1)
 
         # password input
         driver.find_element_by_name('password').send_keys(password)
-        sleep(2)
+        driver.implicitly_wait(2)
 
         driver.find_element_by_xpath(
             '/html/body/div[1]/section/main/div/div/div/div/form/div/div[3]/button'
         ).click()
-        sleep(5)
+        driver.implicitly_wait(5)
 
         if self.xpath_exists('/html/body/div[1]/section/main/div/div/div/section/div/div[2]'):
             driver.find_element_by_xpath(
                 '/html/body/div[1]/section/main/div/div/div/div/button'
             ).click()
-            sleep(3)
+            driver.implicitly_wait(3)
 
         driver.switch_to.window(driver.window_handles[0])
-        sleep(3)
+        driver.implicitly_wait(3)
 
     def create_new_post(self):
         print('Creating new post...')
@@ -157,12 +157,12 @@ class CreatorStudioBot:
         driver.find_element_by_xpath(
             '/html/body/div[1]/div[1]/div/div[2]/div/div/div[2]/div[1]/div/div[1]'
         ).click()
-        sleep(1)
+        driver.implicitly_wait(1)
 
         driver.find_element_by_xpath(
             '/html/body/div[3]/div[1]/div[1]/div/div/div[1]/div[2]/div/div[1]/div/div/div/div/div[2]/div/strong'
         ).click()
-        sleep(4)
+        sleep(5)
 
     def upload_content(self, path):
         print('Uploading content:', path.split('\\')[-1])
@@ -171,10 +171,10 @@ class CreatorStudioBot:
         driver.find_element_by_xpath(
             '/html/body/div[4]/div/div/div/div[2]/div[1]/div/div[5]/div/div/div/span'
         ).click()
-        sleep(1)
+        driver.implicitly_wait(1)
 
         driver.find_element_by_css_selector("input[type=file]").send_keys(path)
-        sleep(2)
+        driver.implicitly_wait(2)
 
     def add_text(self, text):
         driver = self.driver
@@ -182,7 +182,7 @@ class CreatorStudioBot:
         driver.find_element_by_xpath(
             '/html/body/div[4]/div/div/div/div[2]/div[1]/div/div[2]/div[1]/div/div/div[2]/div'
         ).send_keys(text)
-        sleep(2)
+        driver.implicitly_wait(2)
 
     def add_random_text(self):
         driver = self.driver
@@ -190,7 +190,7 @@ class CreatorStudioBot:
         driver.find_element_by_xpath(
             '/html/body/div[4]/div/div/div/div[2]/div[1]/div/div[2]/div[1]/div/div/div[2]/div'
         ).send_keys(text_randomizer(tags))
-        sleep(2)
+        driver.implicitly_wait(2)
 
     def add_location(self, location):
         driver = self.driver
@@ -198,7 +198,7 @@ class CreatorStudioBot:
         driver.find_element_by_xpath(
             '/html/body/div[4]/div/div/div/div[2]/div[1]/div/div[3]/span/label/input'
         ).send_keys(location)
-        sleep(2)
+        driver.implicitly_wait(2)
 
     def add_random_location(self):
         driver = self.driver
@@ -206,7 +206,7 @@ class CreatorStudioBot:
         driver.find_element_by_xpath(
             '/html/body/div[4]/div/div/div/div[2]/div[1]/div/div[3]/span/label/input'
         ).send_keys(random.choice(locations))
-        sleep(2)
+        driver.implicitly_wait(2)
 
     def schedule(self, day, month, year, hour, minutes):
         date = f'{day}.{month}.{year}'
@@ -216,7 +216,7 @@ class CreatorStudioBot:
         driver.find_element_by_xpath(
             '/html/body/div[4]/div/div/div/div[3]/div[2]/div/button'
         ).click()
-        sleep(1)
+        driver.implicitly_wait(1)
 
         div = 'div[9]'
 
@@ -227,25 +227,25 @@ class CreatorStudioBot:
         driver.find_element_by_xpath(
             f'/html/body/{div}/div/div/div/div/div[2]/div/div/span'
         ).click()
-        sleep(1)
+        driver.implicitly_wait(1)
 
         # date
         driver.find_element_by_xpath(
             f'/html/body/{div}/div/div/div/div/div[2]/div/div[2]/div/div[2]/div/span/div/span/label/input'
         ).send_keys(date)
-        sleep(1)
+        driver.implicitly_wait(1)
 
         # hour
         driver.find_element_by_xpath(
             f'/html/body/{div}/div/div/div/div/div[2]/div/div[2]/div/div[2]/div/div/div[1]/div[2]/div[1]/div/input'
         ).send_keys(hour)
-        sleep(1)
+        driver.implicitly_wait(1)
 
         # minutes
         driver.find_element_by_xpath(
             f'/html/body/{div}/div/div/div/div/div[2]/div/div[2]/div/div[2]/div/div/div[1]/div[2]/div[2]/div/input'
         ).send_keys(minutes)
-        sleep(1)
+        driver.implicitly_wait(1)
 
         # submit
         driver.find_element_by_xpath(
@@ -290,7 +290,7 @@ class CreatorStudioBot:
                     driver.find_element_by_xpath(
                         '/html/body/div[4]/div/div/div/div[1]/div[1]'
                     ).click()
-                    sleep(1)
+                    driver.implicitly_wait(1)
 
                     div = 'div[9]'
 
@@ -303,7 +303,7 @@ class CreatorStudioBot:
                     driver.find_element_by_xpath(
                         f'/html/body/{div}/div[2]/div/div/div/div/div[3]/div/div/div[2]/div/button'
                     ).click()
-                    sleep(3)
+                    sleep(5)
                     driver.refresh()
                     sleep(5)
                     continue
@@ -366,7 +366,7 @@ class CreatorStudioBot:
                     driver.find_element_by_xpath(
                         '/html/body/div[4]/div/div/div/div[1]/div[1]'
                     ).click()
-                    sleep(1)
+                    driver.implicitly_wait(1)
 
                     div = 'div[9]'
 
@@ -379,7 +379,7 @@ class CreatorStudioBot:
                     driver.find_element_by_xpath(
                         f'/html/body/{div}/div[2]/div/div/div/div/div[3]/div/div/div[2]/div/button'
                     ).click()
-                    sleep(3)
+                    sleep(5)
                     driver.refresh()
                     sleep(5)
                     continue
@@ -405,5 +405,5 @@ if __name__ == "__main__":
     bot = CreatorStudioBot()
     bot.login()
     # bot.schedule_random_content_from_date(1, 6, 2021, 21, 36)
-    bot.schedule_random_content(21, 30)
-    bot.close_browser()
+    # bot.schedule_random_content(21, 30)
+    # bot.close_browser()

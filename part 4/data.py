@@ -1,14 +1,14 @@
-username = 'catzz_of_ig'
-password = 'xp2KvcXXNm2S'
+username = ''
+password = ''
 
 link = 'https://business.facebook.com/creatorstudio/home'
 
-num_of_photo = 682
-num_of_video = 379
+num_of_photo = 0
+num_of_video = 0
 
 # write path to your content
-cats_photo = [rf'f:\cats-content\cats-photo\photo ({i}).jpg' for i in range(1, num_of_photo + 1)]
-cats_video = [rf'f:\cats-content\cats-video\video ({i}).mp4' for i in range(1, num_of_video + 1)]
+cats_photo = [rf'\photo ({i}).jpg' for i in range(1, num_of_photo + 1)]
+cats_video = [rf'\video ({i}).mp4' for i in range(1, num_of_video + 1)]
 cats_content = cats_video + cats_photo
 
 tags_cats = ['cats', 'catsofinstagram', 'cat', 'of', 'catstagram', 'instagram', 'catlovers', 'catlover', 'catlife',
